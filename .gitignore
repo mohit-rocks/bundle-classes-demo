@@ -1,0 +1,62 @@
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.tgz
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+ehthumbs.db
+Thumbs.db
+
+# Ignore Drupal stuff #
+########################
+/web/CHANGELOG.txt
+/web/COPYRIGHT.txt
+/web/INSTALL*.txt
+/web/LICENSE.txt
+/web/MAINTAINERS.txt
+/web/README.txt
+/web/update.php
+/web/sites/all/modules/README.txt
+/web/sites/all/themes/README.txt
+/web/sites/README.txt
+/web/UPGRADE.txt
+/web/core
+/web/modules/contrib
+/web/modules/local
+/web/profiles/contrib
+/web/sites/default/files
+/web/sites/simpletest
+/web/themes/contrib
+/web/libraries
+
+##########################
+/vendor
+/web/sites/default/settings.test.php
+
+# Front end #
+#############
+/node_modules
+
+# Dev files #
+#############
+.vagrant
+.idea
+.php
+/web/sites/default/settings.ddev.php
