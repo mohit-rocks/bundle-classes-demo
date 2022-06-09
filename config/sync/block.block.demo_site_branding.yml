@@ -1,0 +1,25 @@
+uuid: 154b7456-0e45-48d8-9e01-ec4fdf451fe6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - demo_site
+_core:
+  default_config_hash: d-0emr1mEq7sFKDu5RHUJckvNk62hvIZdRwPEfnJyGg
+id: demo_site_branding
+theme: demo_site
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

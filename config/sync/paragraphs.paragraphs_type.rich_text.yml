@@ -1,0 +1,10 @@
+uuid: 6a4ee769-c249-4904-b6e0-e068902d470b
+langcode: en
+status: true
+dependencies: {  }
+id: rich_text
+label: 'Rich Text'
+icon_uuid: null
+icon_default: null
+description: 'Rich text paragraph'
+behavior_plugins: {  }

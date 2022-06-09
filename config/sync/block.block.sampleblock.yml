@@ -1,0 +1,22 @@
+uuid: 6bcda041-8416-40b5-bf7a-b2be7fb741a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - bundle_classes_demo
+  theme:
+    - demo_site
+id: sampleblock
+theme: demo_site
+region: sidebar_first
+weight: -5
+provider: null
+plugin: bundle_classes_demo_sample_block
+settings:
+  id: bundle_classes_demo_sample_block
+  label: 'Sample Block'
+  label_display: visible
+  provider: bundle_classes_demo
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility: {  }
