@@ -4,8 +4,8 @@ declare(strict_types = 1);
 
 namespace Drupal\bundle_classes_demo\Entity\Node;
 
+use Drupal\bundle_classes_demo\Entity\Media\Image;
 use Drupal\bundle_classes_demo\Entity\Traits\FieldProcessorTrait;
-use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
 
 /**
@@ -30,11 +30,9 @@ abstract class NodeBase extends Node {
     /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $headerImageItem */
     $mediaImageItem = $this->get('field_media');
     $media = $mediaImageItem->entity;
-    assert($media instanceof Media);
+    assert($media instanceof Image);
 
-    // @todo: Use another bundle class for Media and move it there.
-    $viewBuilder = \Drupal::entityTypeManager()->getViewBuilder('media');
-    return $viewBuilder->view($media, 'default');
+    return $media->buildMediaRender();
   }
 
 }

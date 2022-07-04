@@ -9,6 +9,7 @@ use Drupal\bundle_classes_demo\Entity\Node\Article;
 use Drupal\bundle_classes_demo\Entity\Node\Page;
 use Drupal\bundle_classes_demo\Entity\Node\LandingPage;
 use Drupal\bundle_classes_demo\Entity\Paragraphs\RichText;
+use Drupal\bundle_classes_demo\Entity\Media\Image;
 
 /**
  * Implements hook_entity_bundle_info_alter().
@@ -22,6 +23,9 @@ function bundle_classes_demo_entity_bundle_info_alter(&$bundles): void {
     ],
     'paragraph' => [
       RichText::BUNDLE => RichText::class,
+    ],
+    'media' => [
+      Image::BUNDLE => Image::class,
     ]
   ];
   foreach ($entity_type_bundle_classes as $entity_type => $bundle_classes) {
