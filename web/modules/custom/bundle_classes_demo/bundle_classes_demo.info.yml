@@ -3,3 +3,6 @@ type: module
 description: Demo module that contains multiple bundle classes.
 package: Custom
 core_version_requirement: ^9 || ^10
+dependencies:
+  - paragraphs:paragraphs
+  - drupal:node

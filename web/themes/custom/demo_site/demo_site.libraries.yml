@@ -1,0 +1,7 @@
+demo_site.paragraphs:
+  version: VERSION
+  css:
+    component:
+      css/components/paragraphs.css: {}
+    base:
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css: { type: external }

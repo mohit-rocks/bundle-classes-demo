@@ -4,6 +4,8 @@ description: This is a sub-theme of theme Bartik.
 core: 8.x
 core_version_requirement: ^8 || ^9
 base theme: bartik
+libraries:
+  - demo_site/demo_site.paragraphs
 regions:
   header: Header
   primary_menu: 'Primary menu'
