@@ -1,28 +1,22 @@
 name: Demo Site Theme
 type: theme
 description: This is a sub-theme of theme Bartik.
-core: 8.x
-core_version_requirement: ^8 || ^9
-base theme: bartik
+core_version_requirement: ^10
+base theme: umami
 libraries:
   - demo_site/demo_site.paragraphs
 regions:
+  pre_header: Pre-header
   header: Header
-  primary_menu: 'Primary menu'
-  secondary_menu: 'Secondary menu'
+  highlighted: Highlighted
+  tabs: Tabs
+  banner_top: 'Banner Top'
+  breadcrumbs: Breadcrumbs
+  page_title: 'Page Title'
+  content: Content
+  sidebar: Sidebar
+  content_bottom: 'Content Bottom'
+  footer: Footer
+  bottom: Bottom
   page_top: 'Page top'
   page_bottom: 'Page bottom'
-  highlighted: Highlighted
-  featured_top: 'Featured top'
-  breadcrumb: Breadcrumb
-  content: Content
-  sidebar_first: 'Sidebar first'
-  sidebar_second: 'Sidebar second'
-  featured_bottom_first: 'Featured bottom first'
-  featured_bottom_second: 'Featured bottom second'
-  featured_bottom_third: 'Featured bottom third'
-  footer_first: 'Footer first'
-  footer_second: 'Footer second'
-  footer_third: 'Footer third'
-  footer_fourth: 'Footer fourth'
-  footer_fifth: 'Footer fifth'

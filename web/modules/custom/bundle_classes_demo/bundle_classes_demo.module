@@ -40,7 +40,7 @@ function bundle_classes_demo_entity_bundle_info_alter(&$bundles): void {
 /**
  * Implements hook_theme().
  */
-function bundle_classes_demo_theme($existing, $type, $theme, $path) {
+function bundle_classes_demo_theme($existing, $type, $theme, $path): array {
   return [
     'landing_page_header' => [
       'variables' => [

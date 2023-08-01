@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="web/core/tests/bootstrap.php" colors="true" beStrictAboutTestsThatDoNotTestAnything="true" beStrictAboutOutputDuringTests="true" beStrictAboutChangesToGlobalState="true" printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage>
+    <exclude>
+      <directory suffix="Test.php">./</directory>
+      <directory suffix="Trait.php">./</directory>
+      <directory suffix="TestBase.php">./</directory>
+    </exclude>
+  </coverage>
+  <php>
+    <!-- Set error reporting to E_ALL. -->
+    <ini name="error_reporting" value="32767"/>
+    <ini name="memory_limit" value="-1"/>
+    <const name="BOOTSTRAP_IS_PHPUNIT" value="true"/>
+    <env name="SIMPLETEST_BASE_URL" value="http://bundle-classes.ddev.site"/>
+    <env name="DTT_BASE_URL" value="http://bundle-classes.ddev.site"/>
+    <env name="SIMPLETEST_DB" value="mysql://db:db@127.0.0.1/db"/>
+    <env name="BROWSERTEST_OUTPUT_DIRECTORY" value="web/sites/default/files"/>
+    <env name="BROWSERTEST_OUTPUT_FILE" value="test-output.html"/>
+    <env name="MINK_DRIVER_ARGS_WEBDRIVER" value='["chrome", {"chromeOptions": {"args": ["--disable-gpu", "--headless"], "w3c": false }}, "http://127.0.0.1:4444/wd/hub"]'/>
+    <env name="DTT_MINK_DRIVER_ARGS" value='["chrome", { "chromeOptions": { "w3c": false } }, "http://127.0.0.1:4444/wd/hub"]'/>
+    <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak"/>
+  </php>
+  <testsuites>
+    <testsuite name="unit">
+      <directory>./web/modules/custom/*/tests/src/Unit</directory>
+      <directory>./tests/src/Unit</directory>
+    </testsuite>
+    <testsuite name="kernel">
+      <directory>./web/modules/custom/*/tests/src/Kernel</directory>
+      <directory>./web/profiles/custom/*/tests/src/Kernel</directory>
+    </testsuite>
+    <testsuite name="covered">
+      <directory>./web/modules/custom/*/tests/src/Unit</directory>
+      <directory>./web/profiles/custom/*/tests/src/Unit</directory>
+      <directory>./web/modules/custom/*/tests/src/Kernel</directory>
+      <directory>./web/profiles/custom/*/tests/src/Kernel</directory>
+      <directory>./tests/src/Unit</directory>
+    </testsuite>
+    <testsuite name="functional">
+      <directory>./web/modules/custom/*/tests/src/Functional</directory>
+      <directory>./web/profiles/custom/*/tests/src/Functional</directory>
+      <directory>./tests/src/Functional</directory>
+    </testsuite>
+    <testsuite name="functionaljavascript">
+      <directory>./web/modules/custom/*/tests/src/FunctionalJavascript</directory>
+      <directory>./web/profiles/custom/*/tests/src/FunctionalJavascript</directory>
+      <directory>./tests/src/FunctionalJavascript</directory>
+    </testsuite>
+  </testsuites>
+  <listeners>
+    <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener">
+    </listener>
+  </listeners>
+</phpunit>

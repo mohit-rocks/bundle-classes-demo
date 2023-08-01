@@ -1,6 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
+use Drupal\bundle_classes_demo\TemplateAwareEntityInterface;
+use Drupal\Core\Cache\CacheableMetadata;
+
 /**
- * @file Theme file for the demo_site theme.
+ * Implements template_preprocess_node().
  */
- 
+function demo_site_preprocess_node(array $variables): void {
+  $node = $variables['node'];
+  if (!$node instanceof TemplateAwareEntityInterface) {
+    return;
+  }
+  $cache = new CacheableMetadata();
+  $variables += $node->getTemplateVariables($cache);
+  $cache->applyTo($variables);
+}

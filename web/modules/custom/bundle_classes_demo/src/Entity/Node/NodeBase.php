@@ -6,6 +6,9 @@ namespace Drupal\bundle_classes_demo\Entity\Node;
 
 use Drupal\bundle_classes_demo\Entity\Media\Image;
 use Drupal\bundle_classes_demo\Entity\Traits\FieldProcessorTrait;
+use Drupal\Component\Render\MarkupInterface;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\node\Entity\Node;
 
 /**
@@ -14,6 +17,7 @@ use Drupal\node\Entity\Node;
 abstract class NodeBase extends Node {
 
   use FieldProcessorTrait;
+  use StringTranslationTrait;
 
   public const BUNDLE = NULL;
 
@@ -33,6 +37,21 @@ abstract class NodeBase extends Node {
     assert($media instanceof Image);
 
     return $media->buildMediaRender();
+  }
+
+  /**
+   * Get the node author information.
+   */
+  public function getNodeAuthorName(): MarkupInterface {
+    $author = $this->get('uid')->view();
+    return \Drupal::service('renderer')->render($author);
+  }
+
+  /**
+   * Get the content type label.
+   */
+  public function getContentTypeLabel(): ?string {
+    return $this->type->getEntity()?->label();
   }
 
 }
